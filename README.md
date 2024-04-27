@@ -5,5 +5,5 @@
 # - Camilo Tejada | Lovelace
 # - Andrea Dominguez | Lovelace
 # - Juan Esteban Jaramillo | VanRossum
-# - Manuel Giraldo | VanRossum
+# - Manuela Giraldo | VanRossum
 # - Daniel Parra | Lovelace
