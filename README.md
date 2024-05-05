@@ -1,5 +1,8 @@
 # RiwiMindset
-![Project](Project.jpg)
+![Project](/img/Project.jpg)
+![Project](/img/Diagrama%20de%20Estructura.png.jpg)
+![Project](/img/Diagrama%20de%20Clases.jpg)
+![Project](/img/Diagrama%20Entidad%20Relacion.png)
 
 ## Integrantes
 # - Camilo Tejada | Lovelace
