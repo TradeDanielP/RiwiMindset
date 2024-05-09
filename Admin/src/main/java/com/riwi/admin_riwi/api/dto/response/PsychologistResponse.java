@@ -1,4 +1,4 @@
-package com.riwi.admin_riwi.api.dto.reponse;
+package com.riwi.admin_riwi.api.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

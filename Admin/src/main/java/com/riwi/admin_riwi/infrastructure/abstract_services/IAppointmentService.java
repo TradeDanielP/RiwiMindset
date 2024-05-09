@@ -1,4 +1,4 @@
-package com.riwi.admin_riwi.infrastructure.abastract_services;
+package com.riwi.admin_riwi.infrastructure.abstract_services;
 
 import com.riwi.admin_riwi.api.dto.request.AppointmentRequest;
 import com.riwi.admin_riwi.api.dto.response.AppointmenResponse;

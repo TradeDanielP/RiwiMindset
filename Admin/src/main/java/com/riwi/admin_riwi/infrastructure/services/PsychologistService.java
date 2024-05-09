@@ -5,11 +5,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.riwi.admin_riwi.api.dto.reponse.PsychologistResponse;
 import com.riwi.admin_riwi.api.dto.request.PsychologistReq;
+import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
 import com.riwi.admin_riwi.domain.entities.Psychologist;
 import com.riwi.admin_riwi.domain.repositories.PsychologistRepository;
-import com.riwi.admin_riwi.infrastructure.abastract_services.IPsychologistService;
+import com.riwi.admin_riwi.infrastructure.abstract_services.IPsychologistService;
+import com.riwi.admin_riwi.util.exceptions.BadRequestException;
 
 import lombok.AllArgsConstructor;
 
@@ -67,7 +68,7 @@ public class PsychologistService implements IPsychologistService {
 
     }
     private Psychologist find(String id){
-        return this.service.findById(id).orElseThrow();
+        return this.service.findById(id).orElseThrow(()-> new BadRequestException ("No hay registros con el id suministrado"));
 
     }
 }

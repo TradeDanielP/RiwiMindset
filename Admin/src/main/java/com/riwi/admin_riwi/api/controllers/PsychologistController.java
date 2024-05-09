@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.riwi.admin_riwi.api.dto.reponse.PsychologistResponse;
 import com.riwi.admin_riwi.api.dto.request.PsychologistReq;
-import com.riwi.admin_riwi.infrastructure.abastract_services.IPsychologistService;
+import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
+import com.riwi.admin_riwi.infrastructure.abstract_services.IPsychologistService;
 
 import lombok.AllArgsConstructor;
 

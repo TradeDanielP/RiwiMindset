@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.riwi.admin_riwi.api.dto.errors.BaseErrorResp;
 import com.riwi.admin_riwi.api.dto.errors.ErrorsResp;
-import com.riwi.admin_riwi.util.exceptions.BadRequestException;
-
 
 
 /*

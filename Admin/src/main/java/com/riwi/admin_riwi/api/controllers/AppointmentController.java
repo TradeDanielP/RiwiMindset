@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.riwi.admin_riwi.api.dto.request.AppointmentRequest;
 import com.riwi.admin_riwi.api.dto.response.AppointmenResponse;
-import com.riwi.admin_riwi.infrastructure.abastract_services.IAppointmentService;
+import com.riwi.admin_riwi.infrastructure.abstract_services.IAppointmentService;
 
 import lombok.AllArgsConstructor;
 

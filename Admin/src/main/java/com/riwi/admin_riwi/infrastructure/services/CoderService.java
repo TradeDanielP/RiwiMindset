@@ -5,11 +5,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.riwi.admin_riwi.api.dto.reponse.CoderResponse;
 import com.riwi.admin_riwi.api.dto.request.CoderRequest;
+import com.riwi.admin_riwi.api.dto.response.CoderResponse;
 import com.riwi.admin_riwi.domain.entities.Coder;
 import com.riwi.admin_riwi.domain.repositories.CoderRepository;
-import com.riwi.admin_riwi.infrastructure.abastract_services.ICoderService;
+import com.riwi.admin_riwi.infrastructure.abstract_services.ICoderService;
+import com.riwi.admin_riwi.util.exceptions.BadRequestException;
 
 import lombok.AllArgsConstructor;
 
@@ -72,7 +73,7 @@ public class CoderService implements ICoderService {
 
     private Coder find(String id) {
 
-        return this.coderRep.findById(id).orElseThrow();
+        return this.coderRep.findById(id).orElseThrow(()-> new BadRequestException ("No hay registros con el id suministrado"));
     }
     
 }

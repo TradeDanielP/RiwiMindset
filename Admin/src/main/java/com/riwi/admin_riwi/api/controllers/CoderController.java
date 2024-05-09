@@ -8,9 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import com.riwi.admin_riwi.api.dto.reponse.CoderResponse;
 import com.riwi.admin_riwi.api.dto.request.CoderRequest;
-import com.riwi.admin_riwi.infrastructure.abastract_services.ICoderService;
+import com.riwi.admin_riwi.api.dto.response.CoderResponse;
+import com.riwi.admin_riwi.infrastructure.abstract_services.ICoderService;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
