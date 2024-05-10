@@ -30,9 +30,9 @@ public class AppointmentRequest {
     @NotBlank(message = "El motivo de la cita es requerida")
     private String reason;
     @FutureOrPresent
-    @NotBlank(message = "La fecha de la cita es requerida")
+    @NotNull(message = "La fecha de la cita es requerida")
     private LocalDate date;
-    @NotBlank(message = "La hora de la cita es requerida")
+    @NotNull(message = "La hora de la cita es requerida")
     private LocalTime time;
     @NotNull(message = "El id del coder es obligatorio")
     @Min(value = 1)
