@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,8 +37,10 @@ public class Appointment {
     private LocalDate date;
     @Column(nullable = false)
     private LocalTime time;
+    @ManyToOne
     @JoinColumn(name = "coder_id", referencedColumnName = "id")
     private Coder coder;
+    @ManyToOne
     @JoinColumn(name = "pyschologist_id", referencedColumnName = "id")
     private Psychologist pyschologist;
 }

@@ -1,5 +1,6 @@
 package com.riwi.admin_riwi.domain.entities;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.time.LocalDate;
 

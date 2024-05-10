@@ -30,5 +30,4 @@ public class Psychologist {
     private String password;
     private String photo;
 
-
 }
