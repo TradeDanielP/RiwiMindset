@@ -3,6 +3,8 @@ package com.riwi.admin_riwi.api.dto.request;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import com.riwi.admin_riwi.domain.entities.Coder;
+import com.riwi.admin_riwi.domain.entities.Psychologist;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Min;
@@ -34,8 +36,8 @@ public class AppointmentRequest {
     private LocalTime time;
     @NotNull(message = "El id del coder es obligatorio")
     @Min(value = 1)
-    private Integer coder;
+    private Coder coder;
     @NotNull(message = "El id de la psicologa es obligatorio")
     @Min(value = 1)
-    private Integer pyschologist;
+    private Psychologist pyschologist;
 }

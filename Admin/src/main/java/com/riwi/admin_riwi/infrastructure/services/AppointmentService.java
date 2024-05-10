@@ -1,5 +1,6 @@
 package com.riwi.admin_riwi.infrastructure.services;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.admin_riwi.api.dto.request.AppointmentRequest;
 import com.riwi.admin_riwi.api.dto.response.AppointmenResponse;
+import com.riwi.admin_riwi.api.dto.response.CoderResponse;
+import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
 import com.riwi.admin_riwi.domain.entities.Appointment;
 import com.riwi.admin_riwi.domain.repositories.AppointmentRepository;
 import com.riwi.admin_riwi.infrastructure.abstract_services.IAppointmentService;
@@ -62,6 +65,13 @@ public class AppointmentService implements IAppointmentService {
     }
 
     private AppointmenResponse entityToResponse(Appointment entity){
+        
+        CoderResponse coder = new CoderResponse();
+        BeanUtils.copyProperties(entity.getCoder(),coder);
+
+        PsychologistResponse psychologist = new PsychologistResponse();
+        BeanUtils.copyProperties(entity.getPyschologist(), psychologist);
+        
         return AppointmenResponse.builder()
             .id(entity.getId())
             .coderName(entity.getCoderName())
@@ -70,8 +80,8 @@ public class AppointmentService implements IAppointmentService {
             .reason(entity.getReason())
             .date(entity.getDate())
             .time(entity.getTime())
-            .coder(entity.getCoder())
-            .pyschologist(entity.getPyschologist())
+            .coder(coder)
+            .pyschologist(psychologist)
             .build();
     }
 
@@ -83,14 +93,12 @@ public class AppointmentService implements IAppointmentService {
             .reason(request.getReason())
             .date(request.getDate())
             .time(request.getTime())
-            .coder(request.getCoder())
-            .pyschologist(request.getPyschologist())
             .build();
     }
 
     private Appointment find(Long id){
         return this.objAppointmentRepository.findById(id)
-            .orElseThrow(()-> new BadRequestException ("No hay registros con el id suministrado"));
+            .orElseThrow(()-> new BadRequestException ("No hay citas con el id suministrado"));
     }
     
 }

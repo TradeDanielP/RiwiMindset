@@ -1,8 +1,6 @@
 package com.riwi.admin_riwi.api.dto.response;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,16 +11,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppointmenResponse {
-    
+public class RecordResponse {
+ 
     private Long id;
-    private String coderName;
-    private String start;
-    private String end;
-    private String reason;
-    private LocalDate date;
-    private LocalTime time;
+    private LocalDate dateRecord;
+    private String registration;
+    private String observation;
     private CoderResponse coder;
-    private PsychologistResponse pyschologist;
 
 }
