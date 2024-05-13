@@ -52,6 +52,7 @@ public class AppointmentService implements IAppointmentService {
         this.objAppointmentRepository.delete(this.find(id));
     }
 
+    @SuppressWarnings("null")
     @Override
     public Page<AppointmenResponse> getAll(int page, int size) {
       

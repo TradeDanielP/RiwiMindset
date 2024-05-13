@@ -66,6 +66,7 @@ public class RecordService implements IRecordService {
         this.recordRepository.delete(this.find(id));
     }
 
+    @SuppressWarnings("null")
     @Override
     public Page<RecordResponse> getAll(int page, int size) {
        
