@@ -21,6 +21,7 @@ public class CoderResponse {
     private ClanEnum clan;
     private String phone;
     private String email;    
+    private String photo;
     private LocalDate dateborn;
     private BigInteger cc;
 }

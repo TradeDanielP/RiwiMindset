@@ -61,13 +61,13 @@ public class CoderService implements ICoderService {
 
         return CoderResponse.builder().id(entity.getId()).name(entity.getName()).clan(entity.getClan())
                 .phone(entity.getPhone())
-                .email(entity.getEmail()).dateborn(entity.getDateborn()).phone(entity.getPhoto()).cc(entity.getCc()).build();
+                .email(entity.getEmail()).dateborn(entity.getDateborn()).photo(entity.getPhoto()).cc(entity.getCc()).build();
 
     }
     
     private Coder requestToCoder(CoderRequest entity) {
         return Coder.builder().name(entity.getName()).clan(entity.getClan()).phone(entity.getPhone())
-                .email(entity.getEmail()).dateborn(entity.getDateborn()).phone(entity.getPhoto()).cc(entity.getCc()).build();
+                .email(entity.getEmail()).dateborn(entity.getDateborn()).photo(entity.getPhoto()).cc(entity.getCc()).build();
 
     }
 
