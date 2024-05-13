@@ -27,7 +27,7 @@ public class CoderRequest {
     private ClanEnum clan;
     @Email
     private String email;
-    @Size(min = 10, max = 20, message = "El teléfono debe tener entre 10 y 20 caracteres")
+    @Size(min = 1, max = 20, message = "El teléfono debe tener entre 10 y 20 caracteres")
     private String phone;
     @NotNull(message = "la fecha es obligatoria")
     private LocalDate dateborn;
