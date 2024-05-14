@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.admin_riwi.api.dto.request.AppointmentRequest;
 import com.riwi.admin_riwi.api.dto.response.AppointmenResponse;
+import com.riwi.admin_riwi.api.dto.response.CoderBasicResponse;
 import com.riwi.admin_riwi.api.dto.response.CoderResponse;
 import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
 import com.riwi.admin_riwi.domain.entities.Appointment;
+import com.riwi.admin_riwi.domain.entities.Coder;
 import com.riwi.admin_riwi.domain.repositories.AppointmentRepository;
+import com.riwi.admin_riwi.domain.repositories.CoderRepository;
 import com.riwi.admin_riwi.infrastructure.abstract_services.IAppointmentService;
 import com.riwi.admin_riwi.util.exceptions.BadRequestException;
 
@@ -23,10 +26,21 @@ public class AppointmentService implements IAppointmentService {
 
     @Autowired
     private final AppointmentRepository objAppointmentRepository;
+    @Autowired
+    private final CoderRepository coderRepository;
     
     @Override
     public AppointmenResponse create(AppointmentRequest request) {
+
+          // Obtener cliente
+          Coder coder = this.coderRepository.findById(request.getCoderId())
+                .orElseThrow(() -> new BadRequestException("No hay coders con el id suministrado"));
+
+
         Appointment appointment = this.requestToEntity(request);
+
+        appointment.setCoder(coder);
+
         return this.entityToResponse(this.objAppointmentRepository.save(appointment));
     }
 
@@ -52,13 +66,12 @@ public class AppointmentService implements IAppointmentService {
         this.objAppointmentRepository.delete(this.find(id));
     }
 
-    @SuppressWarnings("null")
     @Override
     public Page<AppointmenResponse> getAll(int page, int size) {
       
         if (page < 0) page = 0;
 
-        PageRequest pagination = null;
+        PageRequest pagination = PageRequest.of(page, size);
 
         return this.objAppointmentRepository.findAll(pagination)
             .map(this::entityToResponse);
@@ -66,29 +79,29 @@ public class AppointmentService implements IAppointmentService {
     }
 
     private AppointmenResponse entityToResponse(Appointment entity){
-        
-        CoderResponse coder = new CoderResponse();
-        BeanUtils.copyProperties(entity.getCoder(),coder);
 
         PsychologistResponse psychologist = new PsychologistResponse();
         BeanUtils.copyProperties(entity.getPyschologist(), psychologist);
+
+        CoderResponse coder = new CoderResponse();
+        BeanUtils.copyProperties(entity.getCoder(),coder);
         
         return AppointmenResponse.builder()
             .id(entity.getId())
-            .coderName(entity.getCoderName())
+            .title(entity.getTitle())
             .start(entity.getStart())
             .end(entity.getEnd())
             .reason(entity.getReason())
             .date(entity.getDate())
             .time(entity.getTime())
-            .coder(coder)
             .pyschologist(psychologist)
+            .coder(coder)
             .build();
     }
 
     private Appointment requestToEntity(AppointmentRequest request){
         return Appointment.builder()
-            .coderName(request.getCoderName())
+            .title(request.getTitle())
             .start(request.getStart())
             .end(request.getEnd())
             .reason(request.getReason())

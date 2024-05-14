@@ -27,6 +27,7 @@ public class Psychologist {
     private String email;
     @Column(nullable=false)
     private BigInteger cc;
+    @Column(nullable = false)
     private String password;
     private String photo;
 

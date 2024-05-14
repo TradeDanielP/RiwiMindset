@@ -59,12 +59,12 @@ public class PsychologistService implements IPsychologistService {
     // metodos propios
     private PsychologistResponse entityToResponse(Psychologist entity) {
 
-        return PsychologistResponse.builder().id(entity.getId()).name(entity.getName()).password(entity.getPassword()).photo(entity.getPhoto()).email(entity.getEmail()).build();
+        return PsychologistResponse.builder().id(entity.getId()).name(entity.getName()).photo(entity.getPhoto()).cc(entity.getCc()).email(entity.getEmail()).build();
 
 }
     private Psychologist requestToentity (PsychologistReq entity){
 
-        return Psychologist.builder().name(entity.getName()).password(entity.getPassword()).photo(entity.getPhoto()).email(entity.getEmail()).build();
+        return Psychologist.builder().name(entity.getName()).password(entity.getPassword()).photo(entity.getPhoto()).cc(entity.getCc()).email(entity.getEmail()).build();
 
     }
     private Psychologist find(String id){

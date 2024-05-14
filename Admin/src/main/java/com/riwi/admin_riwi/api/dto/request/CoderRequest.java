@@ -24,9 +24,9 @@ public class CoderRequest {
     @Size(min = 1, max = 100, message = "El nombre debe tener entre 1 y 100 caracteres")
     private String name;
     private ClanEnum clan;
-    @Size(min = 1, max = 20, message = "El teléfono debe tener entre 10 y 20 caracteres")
+    @Size(min = 1, max = 21, message = "El teléfono debe tener entre 10 y 20 caracteres")
     private String phone;
-    @Email
+    @Email(message = "debe ser formato @ email")
     private String email;
     @NotNull(message = "la fecha es obligatoria")
     private LocalDate dateborn;
