@@ -20,7 +20,7 @@ import com.riwi.admin_riwi.infrastructure.abstract_services.IPsychologistService
 import lombok.AllArgsConstructor;
 
 @RestController
-@RequestMapping(path = "/pshycologist")
+@RequestMapping(path = "/psychologist")
 @AllArgsConstructor
 public class PsychologistController {
     private final IPsychologistService service;

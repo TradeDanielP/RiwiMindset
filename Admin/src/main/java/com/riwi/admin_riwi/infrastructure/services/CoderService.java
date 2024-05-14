@@ -1,5 +1,6 @@
 package com.riwi.admin_riwi.infrastructure.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,8 +31,9 @@ public class CoderService implements ICoderService {
 
     @Override
     public CoderResponse create(CoderRequest request) {
-        Coder response = this.requestToCoder(request);
-        return this.entityToResp(this.coderRep.save(response));
+        Coder coder = this.requestToCoder(request);
+        coder.setAppointments(new ArrayList<>());
+        return this.entityToResp(this.coderRep.save(coder));
     }
 
     @Override
@@ -49,10 +51,12 @@ public class CoderService implements ICoderService {
 
     @Override
     public Page<CoderResponse> getAll(int page, int size) {
-        if (page < 0)
-            page = 0;
-        PageRequest request = PageRequest.of(page, size);
-        return this.coderRep.findAll(request).map(this::entityToResp);
+        if (page < 0) page = 0;
+
+        PageRequest pagination = PageRequest.of(page, size);
+
+        return this.coderRep.findAll(pagination)
+                .map(this::entityToResp);
     }
 
     @Override
@@ -87,9 +91,6 @@ public class CoderService implements ICoderService {
 
      private AppointmentBasicResp entityToResponseAppointment(Appointment entity){
 
-        PsychologistResponse psychologist = new PsychologistResponse();
-        BeanUtils.copyProperties(entity.getPyschologist(), psychologist);
-
         return AppointmentBasicResp.builder()
                     .id(entity.getId())
                     .title(entity.getTitle())
@@ -98,7 +99,6 @@ public class CoderService implements ICoderService {
                     .reason(entity.getReason())
                     .date(entity.getDate())
                     .time(entity.getTime())
-                    .pyschologist(psychologist)
                     .build();
     }
     

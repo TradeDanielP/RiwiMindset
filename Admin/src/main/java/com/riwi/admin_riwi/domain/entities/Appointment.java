@@ -38,10 +38,12 @@ public class Appointment {
     private LocalDate date;
     @Column(nullable = false)
     private LocalTime time;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coder_id", referencedColumnName = "id")
     private Coder coder;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pyschologist_id", referencedColumnName = "id")
-    private Psychologist pyschologist;
+    @JoinColumn(name = "psychologist_id", referencedColumnName = "id")
+    private Psychologist psychologist;
 }

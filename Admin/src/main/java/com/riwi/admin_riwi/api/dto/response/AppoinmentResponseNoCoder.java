@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppointmentBasicResp {
+public class AppoinmentResponseNoCoder {
     
     private Long id;
     private String title;
@@ -21,6 +21,5 @@ public class AppointmentBasicResp {
     private String reason;
     private LocalDate date;
     private LocalTime time;
-    private CoderBasicResponse coder;
 
 }

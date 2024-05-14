@@ -66,13 +66,12 @@ public class RecordService implements IRecordService {
         this.recordRepository.delete(this.find(id));
     }
 
-    @SuppressWarnings("null")
     @Override
     public Page<RecordResponse> getAll(int page, int size) {
        
         if (page < 0) page = 0;
 
-        PageRequest pagination = null;
+        PageRequest pagination = PageRequest.of(page, size);
 
         return this.recordRepository.findAll(pagination)
             .map(this::entityToResponse);

@@ -21,7 +21,7 @@ public class AppointmenResponse {
     private String reason;
     private LocalDate date;
     private LocalTime time;
-    private CoderResponse coder;
-    private PsychologistResponse pyschologist;
+    private CoderBasicResponse coder;
+    private PsychologistBasicResponse pyschologist;
 
 }
