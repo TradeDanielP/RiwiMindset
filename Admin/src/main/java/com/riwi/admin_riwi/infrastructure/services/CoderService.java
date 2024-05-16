@@ -10,7 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.riwi.admin_riwi.api.dto.request.CoderRequest;
-import com.riwi.admin_riwi.api.dto.response.AppointmentBasicResp;
+import com.riwi.admin_riwi.api.dto.response.AppoinmentResponseNoCoder; 
 import com.riwi.admin_riwi.api.dto.response.CoderResponse;
 import com.riwi.admin_riwi.domain.entities.Appointment;
 import com.riwi.admin_riwi.domain.entities.Coder;
@@ -69,7 +69,7 @@ public class CoderService implements ICoderService {
 
     private CoderResponse entityToResp(Coder entity) {
 
-        List<AppointmentBasicResp> appointments = entity.getAppointments()
+        List<AppoinmentResponseNoCoder> appointments = entity.getAppointments()
             .stream()
             .map(this::entityToResponseAppointment)
             .collect(Collectors.toList());
@@ -88,9 +88,10 @@ public class CoderService implements ICoderService {
 
     }
 
-     private AppointmentBasicResp entityToResponseAppointment(Appointment entity){
+     private AppoinmentResponseNoCoder entityToResponseAppointment(Appointment entity){
 
-        return AppointmentBasicResp.builder()
+        return AppoinmentResponseNoCoder.builder()
+
                     .id(entity.getId())
                     .title(entity.getTitle())
                     .start(entity.getStart())

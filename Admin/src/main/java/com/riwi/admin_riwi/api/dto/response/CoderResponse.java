@@ -25,5 +25,5 @@ public class CoderResponse {
     private String photo;
     private LocalDate dateborn;
     private BigInteger cc;
-    private List<AppointmentBasicResp> appointments;
+    private List<AppoinmentResponseNoCoder> appointments;
 }

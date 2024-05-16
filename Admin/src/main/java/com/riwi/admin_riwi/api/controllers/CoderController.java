@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping(path = "/coder")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 public class CoderController {
     private final ICoderService service;
 

@@ -37,8 +37,6 @@ public class Coder {
     private String email;
     @Column(nullable=false)
     private BigInteger cc;
-    @Column(nullable=false)
-    private String password;
     @Column(length = 21, nullable = false)
     private String phone;
     @Column(nullable=false)
