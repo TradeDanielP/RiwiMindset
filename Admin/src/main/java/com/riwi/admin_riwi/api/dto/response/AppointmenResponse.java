@@ -15,13 +15,13 @@ import lombok.NoArgsConstructor;
 public class AppointmenResponse {
     
     private Long id;
-    private String coderName;
+    private String title;
     private String start;
     private String end;
     private String reason;
     private LocalDate date;
     private LocalTime time;
-    private Integer coder;
-    private Integer pyschologist;
+    private CoderBasicResponse coder;
+    private PsychologistBasicResponse pyschologist;
 
 }

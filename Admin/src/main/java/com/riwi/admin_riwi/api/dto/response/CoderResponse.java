@@ -3,6 +3,7 @@ package com.riwi.admin_riwi.api.dto.response;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
+import java.util.List;
 
 import com.riwi.admin_riwi.util.enums.ClanEnum;
 
@@ -24,4 +25,5 @@ public class CoderResponse {
     private String photo;
     private LocalDate dateborn;
     private BigInteger cc;
+    private List<AppoinmentResponseNoCoder> appointments;
 }
