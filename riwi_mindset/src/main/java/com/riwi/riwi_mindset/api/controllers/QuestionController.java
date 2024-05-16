@@ -36,7 +36,7 @@ public class QuestionController {
     @GetMapping
     public ResponseEntity<Page<QuestionResp>> getAll(
             @RequestParam(defaultValue = "1") int page,
-            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "20") int size,
             @RequestHeader(required = false) SortType sortType) {
                 if (Objects.isNull(sortType)) sortType = SortType.NONE;
 
