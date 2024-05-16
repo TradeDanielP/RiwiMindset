@@ -10,14 +10,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import com.riwi.admin_riwi.api.dto.request.CoderRequest;
 import com.riwi.admin_riwi.api.dto.request.PsychologistReq;
 import com.riwi.admin_riwi.api.dto.response.AppointmentBasicResp;
 import com.riwi.admin_riwi.api.dto.response.CoderBasicResponse;
-import com.riwi.admin_riwi.api.dto.response.CoderResponse;
 import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
 import com.riwi.admin_riwi.domain.entities.Appointment;
-import com.riwi.admin_riwi.domain.entities.Coder;
 import com.riwi.admin_riwi.domain.entities.Psychologist;
 import com.riwi.admin_riwi.domain.repositories.PsychologistRepository;
 import com.riwi.admin_riwi.infrastructure.abstract_services.IPsychologistService;
@@ -66,6 +63,7 @@ public class PsychologistService implements IPsychologistService {
         Psychologist psyco = this.find(id);
         psyco = this.requestToentity(request);
         psyco.setId(id);
+        psyco.setAppointments(new ArrayList<>());
         return this.entityToResponse(this.service.save(psyco));
     }
 

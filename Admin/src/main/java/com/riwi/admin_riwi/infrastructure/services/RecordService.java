@@ -7,6 +7,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.riwi.admin_riwi.api.dto.request.RecordRequest;
+import com.riwi.admin_riwi.api.dto.response.CoderBasicResponse;
 import com.riwi.admin_riwi.api.dto.response.CoderResponse;
 import com.riwi.admin_riwi.api.dto.response.RecordResponse;
 import com.riwi.admin_riwi.domain.entities.Coder;
@@ -57,6 +58,7 @@ public class RecordService implements IRecordService {
         record = this.requestToEntity(request);
 
         record.setCoder(coder);
+        record.setId(id);
 
         return this.entityToResponse(this.recordRepository.save(record));
     }
@@ -81,7 +83,7 @@ public class RecordService implements IRecordService {
     
     private RecordResponse entityToResponse(Record entity) {
 
-        CoderResponse coder = new CoderResponse();
+        CoderBasicResponse coder = new CoderBasicResponse();
         BeanUtils.copyProperties(entity.getCoder(), coder);
 
         return RecordResponse.builder()

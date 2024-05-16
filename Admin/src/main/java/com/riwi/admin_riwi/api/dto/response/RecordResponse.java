@@ -17,6 +17,6 @@ public class RecordResponse {
     private LocalDate dateRecord;
     private String registration;
     private String observation;
-    private CoderResponse coder;
+    private CoderBasicResponse coder;
 
 }

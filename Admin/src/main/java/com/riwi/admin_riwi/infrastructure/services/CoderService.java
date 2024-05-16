@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import com.riwi.admin_riwi.api.dto.request.CoderRequest;
 import com.riwi.admin_riwi.api.dto.response.AppointmentBasicResp;
 import com.riwi.admin_riwi.api.dto.response.CoderResponse;
-import com.riwi.admin_riwi.api.dto.response.PsychologistResponse;
 import com.riwi.admin_riwi.domain.entities.Appointment;
 import com.riwi.admin_riwi.domain.entities.Coder;
 import com.riwi.admin_riwi.domain.repositories.CoderRepository;
@@ -64,6 +62,7 @@ public class CoderService implements ICoderService {
         Coder coder =this.find(id);
         coder=this.requestToCoder(request);
         coder.setId(id);
+        coder.setAppointments(new ArrayList<>());
         return this.entityToResp(this.coderRep.save(coder));
 
     }
