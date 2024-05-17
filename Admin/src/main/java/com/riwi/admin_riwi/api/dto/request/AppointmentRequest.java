@@ -1,7 +1,6 @@
 package com.riwi.admin_riwi.api.dto.request;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 
 import jakarta.validation.constraints.FutureOrPresent;
@@ -30,7 +29,7 @@ public class AppointmentRequest {
     @NotNull(message = "La fecha de la cita es requerida")
     private LocalDate date;
     @NotNull(message = "La hora de la cita es requerida")
-    private LocalTime time;
+    private String time;
     @NotNull(message = "El id del coder es obligatorio")
     private String coderId;
     @NotNull(message = "El id de la psicologa es obligatorio")

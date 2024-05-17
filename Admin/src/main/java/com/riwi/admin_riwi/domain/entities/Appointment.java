@@ -1,7 +1,6 @@
 package com.riwi.admin_riwi.domain.entities;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +36,7 @@ public class Appointment {
     @Column(nullable = false)
     private LocalDate date;
     @Column(nullable = false)
-    private LocalTime time;
+    private String time;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "coder_id", referencedColumnName = "id")
