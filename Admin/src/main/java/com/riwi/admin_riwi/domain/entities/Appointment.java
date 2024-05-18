@@ -39,7 +39,7 @@ public class Appointment {
     private String time;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "coder_id", referencedColumnName = "id")
+    @JoinColumn(name = "coder_id", referencedColumnName = "_id")
     private Coder coder;
 
     @ManyToOne(fetch = FetchType.LAZY)

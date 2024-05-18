@@ -29,21 +29,26 @@ import lombok.ToString;
 public class Coder {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String _id;
     @Column(length = 100, nullable = false)
     private String name;
     @Column(nullable = false)
     private String email;
     @Column(nullable=false)
-    private BigInteger cc;
+    private String document;
+    @Column(nullable=false)
+    private String password;
     @Column(length = 21, nullable = false)
     private String phone;
     @Column(nullable=false)
-    private LocalDate dateborn;
+    private LocalDate dateBirth;
+
     private String photo;
     @Column(nullable=false)
     private ClanEnum clan;
+    @Column(nullable=false)
+    private String role;
+    
     
     @ToString.Exclude
     @EqualsAndHashCode.Exclude // @121312312
