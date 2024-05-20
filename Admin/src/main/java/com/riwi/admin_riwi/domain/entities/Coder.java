@@ -42,7 +42,7 @@ public class Coder {
     private String phone;
     @Column(nullable=false)
     private LocalDate dateBirth;
-
+    @Column(nullable=false)
     private String photo;
     @Column(nullable=false)
     private ClanEnum clan;

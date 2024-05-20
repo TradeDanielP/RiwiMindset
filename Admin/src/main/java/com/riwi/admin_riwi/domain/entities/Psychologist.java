@@ -32,10 +32,12 @@ public class Psychologist {
     @Column(length = 40, nullable = false)
     private String email;
     @Column(nullable=false)
-    private BigInteger cc;
+    private String document;
     @Column(nullable = false)
     private String password;
     private String photo;
+    @Column(nullable=false)
+    private String role;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude

@@ -1,7 +1,5 @@
 package com.riwi.admin_riwi.api.dto.request;
 
-import java.math.BigInteger;
-
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -24,10 +22,13 @@ public class PsychologistReq {
     private String email;
     @NotNull(message = "la cedula es requerida")
     @Min(value = 1)
-    private BigInteger cc;
+    private String document;
     @NotBlank(message = "contraseña requerida")
     private String password;
+    @NotBlank(message = "la foto es obligatoria")
     private String photo;
+    @NotNull(message = "el role es obligatorio")
+    private String role;
 
 
 }

@@ -1,6 +1,5 @@
 package com.riwi.admin_riwi.api.dto.response;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
 import com.riwi.admin_riwi.util.enums.ClanEnum;

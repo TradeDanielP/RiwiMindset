@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import com.riwi.admin_riwi.util.enums.ClanEnum;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -34,7 +33,7 @@ public class CoderRequest {
     private String phone;
     @NotNull(message = "la fecha es obligatoria")
     private LocalDate dateBirth;
-
+    @NotBlank(message = "la foto es obligatoria")
     private String photo;
     private ClanEnum clan;
     @NotNull(message = "el role es obligatorio")
