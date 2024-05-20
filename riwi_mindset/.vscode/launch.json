@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RiwiMindsetApplication<riwi_mindset>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.riwi.riwi_mindset.RiwiMindsetApplication",
+            "projectName": "riwi_mindset",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
