@@ -28,7 +28,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/question")
 @AllArgsConstructor
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 public class QuestionController {
     @Autowired
     private final IQuestionService questionService;
