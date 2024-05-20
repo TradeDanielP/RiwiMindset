@@ -32,7 +32,7 @@ public class Record {
     @Lob
     private String observation;
     @ManyToOne
-    @JoinColumn(name = "coder_id",referencedColumnName = "id")
+    @JoinColumn(name = "coder_id",referencedColumnName = "_id")
     private Coder coder;
 
 }

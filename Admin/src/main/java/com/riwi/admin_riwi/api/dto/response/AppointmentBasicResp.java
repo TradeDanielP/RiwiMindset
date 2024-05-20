@@ -1,7 +1,6 @@
 package com.riwi.admin_riwi.api.dto.response;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +19,7 @@ public class AppointmentBasicResp {
     private String end;
     private String reason;
     private LocalDate date;
-    private LocalTime time;
+    private String time;
     private CoderBasicResponse coder;
 
 }

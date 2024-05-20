@@ -1,6 +1,5 @@
 package com.riwi.admin_riwi.api.dto.response;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
 import com.riwi.admin_riwi.util.enums.ClanEnum;
@@ -15,12 +14,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CoderBasicResponse {
-    private String id;
+    private String _id;
     private String name;
     private ClanEnum clan;
     private String phone;
     private String email;    
     private String photo;
-    private LocalDate dateborn;
-    private BigInteger cc;
+    private LocalDate dateBirth;
+    private String document;
 }
