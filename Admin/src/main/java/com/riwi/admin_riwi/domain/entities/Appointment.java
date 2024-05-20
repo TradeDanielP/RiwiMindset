@@ -43,6 +43,6 @@ public class Appointment {
     private Coder coder;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "psychologist_id", referencedColumnName = "id")
+    @JoinColumn(name = "psychologist_id", referencedColumnName = "_id")
     private Psychologist psychologist;
 }

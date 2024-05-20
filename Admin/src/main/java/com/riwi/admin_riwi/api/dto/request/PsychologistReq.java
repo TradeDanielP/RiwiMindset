@@ -15,6 +15,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PsychologistReq {
+
+    @NotBlank(message = "El id es requerido")
+    private String _id;
     @NotBlank(message = "El nombre es requerido")
     @Size(min = 1, max = 100, message = "El nombre debe tener entre 1 y 100 caracteres")
     private String name;

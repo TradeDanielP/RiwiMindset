@@ -62,7 +62,7 @@ public class PsychologistService implements IPsychologistService {
     public PsychologistResponse update(PsychologistReq request, String id) {
         Psychologist psyco = this.find(id);
         psyco = this.requestToentity(request);
-        psyco.setId(id);
+        psyco.set_id(id);
         psyco.setAppointments(new ArrayList<>());
         return this.entityToResponse(this.service.save(psyco));
     }
@@ -76,7 +76,7 @@ public class PsychologistService implements IPsychologistService {
                 .collect(Collectors.toList());
 
         return PsychologistResponse.builder()
-                .id(entity.getId())
+                ._id(entity.get_id())
                 .name(entity.getName())
                 .photo(entity.getPhoto())
                 .document(entity.getDocument())
@@ -106,6 +106,7 @@ public class PsychologistService implements IPsychologistService {
     private Psychologist requestToentity(PsychologistReq entity) {
 
         return Psychologist.builder()
+                ._id(entity.get_id())
                 .name(entity.getName())
                 .password(entity.getPassword())
                 .photo(entity.getPhoto())

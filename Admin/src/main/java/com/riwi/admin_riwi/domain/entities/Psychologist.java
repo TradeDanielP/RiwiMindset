@@ -1,14 +1,11 @@
 package com.riwi.admin_riwi.domain.entities;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -24,9 +21,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Psychologist {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private String _id;
     @Column(length = 50, nullable = false)
     private String name;
     @Column(length = 40, nullable = false)

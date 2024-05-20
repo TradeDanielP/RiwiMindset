@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class PsychologistBasicResponse {
     
-    private String id;
+    private String _id;
     private String name;
     private String photo;
     private String document;
