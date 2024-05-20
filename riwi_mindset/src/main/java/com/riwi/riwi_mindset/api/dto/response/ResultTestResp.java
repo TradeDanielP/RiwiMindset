@@ -13,4 +13,5 @@ public class ResultTestResp {
     private int idResultTest;
     private String id_coder;
     private String result;
+    private String typeTest;
 }

@@ -1,5 +1,6 @@
 package com.riwi.riwi_mindset.domain.entities;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,4 +24,6 @@ public class ResultTest {
     private String id_coder;
     @Column(nullable = false)
     private String result;
+    @Column(nullable = false)
+    private String typeTest;
 }

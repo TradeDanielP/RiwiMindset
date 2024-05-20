@@ -28,11 +28,11 @@ import lombok.AllArgsConstructor;
 @RestController
 @RequestMapping("/question")
 @AllArgsConstructor
+@CrossOrigin("*")
 public class QuestionController {
     @Autowired
     private final IQuestionService questionService;
 
-    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @GetMapping
     public ResponseEntity<Page<QuestionResp>> getAll(
             @RequestParam(defaultValue = "1") int page,

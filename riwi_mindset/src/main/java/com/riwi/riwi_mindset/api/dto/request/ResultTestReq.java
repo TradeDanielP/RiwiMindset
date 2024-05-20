@@ -15,4 +15,6 @@ public class ResultTestReq {
     private String id_coder;
     @NotBlank( message = "El resultado es requerido")
     private String result;
+    @NotBlank( message = "El tipo del test es requerido")
+    private String typeTest;
 }

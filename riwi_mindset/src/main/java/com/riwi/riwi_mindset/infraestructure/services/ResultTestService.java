@@ -27,6 +27,7 @@ public class ResultTestService implements IResultTestService{
         ResultTest resultTest = this.requestToEntity(request);
         resultTest.setId_coder(request.getId_coder());
         resultTest.setResult(request.getResult());
+        resultTest.setTypeTest(request.getTypeTest());
 
         return this.entityToResp(this.resultTestRepository.save(resultTest));
 
@@ -68,6 +69,7 @@ public class ResultTestService implements IResultTestService{
         resultTest.setIdResultTest(id);
         resultTest.setId_coder(request.getId_coder());
         resultTest.setResult(request.getResult());
+        resultTest.setTypeTest(request.getTypeTest());
        
         return this.entityToResp(this.resultTestRepository.save(resultTest));
 
@@ -76,6 +78,7 @@ public class ResultTestService implements IResultTestService{
         ResultTest resultTest = new ResultTest();
         resultTest.setId_coder(request.getId_coder());
         resultTest.setResult(request.getResult());
+        resultTest.setTypeTest(request.getTypeTest());
         return resultTest;
     }
     private ResultTestResp entityToResp(ResultTest entity){
@@ -84,6 +87,7 @@ public class ResultTestService implements IResultTestService{
                     .idResultTest(entity.getIdResultTest())
                     .id_coder(entity.getId_coder())
                     .result(entity.getResult())
+                    .typeTest(entity.getTypeTest())
                     .build();
 
     }    
