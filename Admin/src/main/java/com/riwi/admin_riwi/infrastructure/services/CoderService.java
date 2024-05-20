@@ -61,7 +61,7 @@ public class CoderService implements ICoderService {
     public CoderResponse update(CoderRequest request, String id) {
         Coder coder =this.find(id);
         coder=this.requestToCoder(request);
-        coder.setId(id);
+        coder.set_id(id);
         coder.setAppointments(new ArrayList<>());
         return this.entityToResp(this.coderRep.save(coder));
 
@@ -75,14 +75,16 @@ public class CoderService implements ICoderService {
             .collect(Collectors.toList());
 
         return CoderResponse.builder()
-            .id(entity.getId())
+            ._id(entity.get_id())
             .name(entity.getName())
             .clan(entity.getClan())
             .phone(entity.getPhone())
             .email(entity.getEmail())
-            .dateborn(entity.getDateborn())
+            .dateBirth(entity.getDateBirth())
             .photo(entity.getPhoto())
-            .cc(entity.getCc())
+            .document(entity.getDocument())
+            .password(entity.getPassword())
+            .role(entity.getRole())
             .appointments(appointments)
             .build();
 
@@ -104,13 +106,16 @@ public class CoderService implements ICoderService {
     
     private Coder requestToCoder(CoderRequest entity) {
         return Coder.builder()
+                ._id(entity.get_id())
                 .name(entity.getName())
                 .clan(entity.getClan())
                 .phone(entity.getPhone())
                 .email(entity.getEmail())
-                .dateborn(entity.getDateborn())
+                .dateBirth(entity.getDateBirth())
                 .photo(entity.getPhoto())
-                .cc(entity.getCc())
+                .document(entity.getDocument())
+                .password(entity.getPassword())
+                .role(entity.getRole())
                 .build();
     }
 

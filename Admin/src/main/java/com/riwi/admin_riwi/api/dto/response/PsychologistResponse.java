@@ -1,6 +1,5 @@
 package com.riwi.admin_riwi.api.dto.response;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -13,10 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PsychologistResponse {
-    private String id;
+    private String _id;
     private String name;
     private String photo;
-    private BigInteger cc;
+    private String document;
     private String email;
+    private String role;
     private List<AppointmentBasicResp> appointments;
 }
