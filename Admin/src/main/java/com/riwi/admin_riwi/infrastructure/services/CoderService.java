@@ -83,6 +83,7 @@ public class CoderService implements ICoderService {
             .dateBirth(entity.getDateBirth())
             .photo(entity.getPhoto())
             .document(entity.getDocument())
+            .password(entity.getPassword())
             .role(entity.getRole())
             .appointments(appointments)
             .build();
@@ -113,6 +114,7 @@ public class CoderService implements ICoderService {
                 .dateBirth(entity.getDateBirth())
                 .photo(entity.getPhoto())
                 .document(entity.getDocument())
+                .password(entity.getPassword())
                 .role(entity.getRole())
                 .build();
     }

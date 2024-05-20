@@ -24,6 +24,7 @@ public class CoderResponse {
     private String photo;
     private LocalDate dateBirth;
     private String document;
+    private String password;
     private String role;
     private List<AppoinmentResponseNoCoder> appointments;
 }
