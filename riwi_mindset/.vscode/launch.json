@@ -9,16 +9,6 @@
             "projectName": "riwi_mindset",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
-        },
-        {
-            "type": "java",
-            "name": "Spring Boot-AdminRiwiApplication<admin_riwi>",
-            "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "mainClass": "com.riwi.admin_riwi.AdminRiwiApplication",
-            "projectName": "admin_riwi",
-            "args": "",
-            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
