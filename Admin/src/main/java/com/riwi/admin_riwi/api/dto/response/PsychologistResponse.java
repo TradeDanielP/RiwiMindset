@@ -17,5 +17,6 @@ public class PsychologistResponse {
     private String photo;
     private String document;
     private String email;
+    private String role;
     private List<AppointmentBasicResp> appointments;
 }

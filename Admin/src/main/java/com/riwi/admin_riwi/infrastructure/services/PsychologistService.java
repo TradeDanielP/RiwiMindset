@@ -81,6 +81,7 @@ public class PsychologistService implements IPsychologistService {
                 .photo(entity.getPhoto())
                 .document(entity.getDocument())
                 .email(entity.getEmail())
+                .role(entity.getRole())
                 .appointments(appointments)
                 .build();
     }
@@ -110,6 +111,7 @@ public class PsychologistService implements IPsychologistService {
                 .photo(entity.getPhoto())
                 .document(entity.getDocument())
                 .email(entity.getEmail())
+                .role(entity.getRole())
                 .build();
 
     }
