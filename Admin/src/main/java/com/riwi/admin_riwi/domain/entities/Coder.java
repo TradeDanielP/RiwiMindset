@@ -57,4 +57,16 @@ public class Coder {
         orphanRemoval = false  
     )
     private List<Appointment> appointments;
+
+  @ToString.Exclude
+    @EqualsAndHashCode.Exclude // @121312312
+    @OneToMany(
+        fetch = FetchType.EAGER,
+        mappedBy = "coder",
+        cascade = CascadeType.ALL,
+        orphanRemoval = false  
+    )
+    private List<Record> records;
+
+
 }

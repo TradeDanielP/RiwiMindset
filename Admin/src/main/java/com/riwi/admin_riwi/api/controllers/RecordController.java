@@ -1,5 +1,7 @@
 package com.riwi.admin_riwi.api.controllers;
 
+import java.util.List;
+import com.riwi.admin_riwi.domain.entities.Record;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.riwi.admin_riwi.api.dto.request.RecordRequest;
 import com.riwi.admin_riwi.api.dto.response.RecordResponse;
 import com.riwi.admin_riwi.infrastructure.abstract_services.IRecordService;
+import com.riwi.admin_riwi.infrastructure.services.RecordService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -34,7 +37,7 @@ import lombok.AllArgsConstructor;
 public class RecordController {
 
     private final IRecordService recordService;
-
+    private final RecordService record;
     @Operation(summary = "Lista de todos los registros dentro de la api ", description = "Se debe enviar la pagina y el tamaño de la pagina para recibir todas la vacantes correspondientes")
 
     @GetMapping
@@ -55,7 +58,17 @@ public class RecordController {
             @PathVariable Long id) {
         return ResponseEntity.ok(this.recordService.get(id));
     }
+    @GetMapping(path = "/find/{id}")
+    public ResponseEntity<List<RecordResponse>> getIdCoder(@PathVariable String id) {
 
+
+            return ResponseEntity.ok(this.record.findByIdcoder(id));
+
+    }   
+
+
+
+    
     @Operation(summary = "Crea un Registro", description = "Crea un Registro se debe enviar la informacion en formato JSON")
 
     @PostMapping

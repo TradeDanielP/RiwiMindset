@@ -1,5 +1,8 @@
 package com.riwi.admin_riwi.infrastructure.services;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -110,5 +113,8 @@ public class RecordService implements IRecordService {
         return this.recordRepository.findById(id)
             .orElseThrow(()-> new BadRequestException("No hay registros con el id suministrado"));
     }
+    public List<RecordResponse> findByIdcoder(String id){
 
+        return this.recordRepository.findRecordbyCoder(id).stream().map(this::entityToResponse).collect(Collectors.toList());
+    }
 }
