@@ -34,5 +34,5 @@ public class Record {
     @ManyToOne
     @JoinColumn(name = "coder_id",referencedColumnName = "_id")
     private Coder coder;
-
+    
 }
